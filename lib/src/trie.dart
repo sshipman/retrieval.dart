@@ -26,6 +26,11 @@ class Trie {
     return findPrefix(word, fromNode: _root)?.isEndOfWord ?? false;
   }
 
+  /// Whether the trie contains the prefix, regardless of if it's a word
+  bool hasPrefix(String prefix) {
+    return findPrefix(prefix, fromNode: _root) != null;
+  }
+
   /// Finds all complete words in the trie matching the `prefix`.
   ///
   /// Returns a list of all matches. If there are no matches, an empty list is
